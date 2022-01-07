@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title><%= title %></title>
+</head>
+
+<body>
+    <!-- main container start -->
+    <div id="main-container">
+        <h1>ToDo App</h1>
+        <!-- form start -->
+        <form action="/create-task" method="POST" id="taskForm">
+            <div class="desc-container">
+                <label for="task-desc">DESCRIPTION</label>
+                <input type="text" class="task-desc" placeholder="What do you need do?" name="desc" required>
+            </div>
+
+            <div id="cat-date-container">
+
+                <div class="cat-container container-flex">
+                    <label for="category">CATEGORY</label>
+                    <select name="category" id="taskCategory" class="cat-date-input" required>
+                        <option value="Urgent/Important">Urgent/Important</option>
+                        <option value="Not Urgent/Important">Not Urgent/Important</option>
+                        <option value="Not important/Urgent">Not important/Urgent</option>
+                        <option value="Not important/Not Urgent">Not important/Not Urgent</option>
+                    </select>
+                </div>
+
+                <div class="date-container container-flex">
+                    <label for="date">DUE DATE</label>
+                    <input type="date" name="date" id="taskDate" class="cat-date-input" required>
+                </div>
+            </div>
+            <!-- Delete-Add buttons -->
+            <div class="btns">
+                <button id="addBtn" class="btn" type="submit"><i class="fa fa-plus-square"></i>Add</button>
+                <button type="submit" class="clear-btn btn"><a id="clearBtn" href="/clear-list"><i
+                            class="fa fa-trash"></i>Clear List</a></button>
+            </div>
+
+        </form>
+
+        <!-- div to show task list -->
+        <div id="tasksList">
+
+            <table id="taskDetails">
+                <tr>
+                    <th>DESCRIPTION</th>
+                    <th>CATEGORY</th>
+                    <th>DUE DATE</th>
+                    <th>STATUS</th>
+                </tr>
+                <% for(var i of todo_list) { %>
+                    <tr id="taskRow" class="table-row">
+                        <td>
+                            <%= i.desc %>
+                        </td>
+                        <td>
+                            <%= i.category %>
+                        </td>
+                        <td>
+                            <i class="fa fa-calendar"></i>
+                            <%= i.date %>
+                        </td>
+                        <td>
+                            <!-- <input class="check-box" type="checkbox" value="<%= i._id %>" name="taskdone" id="taskDone"> -->
+                            <a href="/delete-task/?taskId=<%= i._id %>" class="delete-task"><i
+                                    class="fa fa-trash"></i>
+                                </i>Done</a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </table>
+
+        </div>
+    </div>
+    <script src="/js/home.js"></script>
+</body>
+
+</html>

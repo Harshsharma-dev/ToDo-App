@@ -1,0 +1,145 @@
+body{
+    font-family: sans-serif;
+}
+
+/* main container styles */
+#main-container{
+    width: 45rem;
+    border: 1px solid;
+    margin: 0 auto;
+    background-color: lightgoldenrodyellow;
+}
+
+h1{
+    color: darkslategrey;
+    font-size: 50px;
+    margin: 6px 0 20px 0px;
+    text-align: center;
+}
+
+/* form styles */
+#taskForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Description input styles */
+.desc-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.795);
+    border-top: 1px solid rgba(128, 128, 128, 0.795);
+    padding: 5px 0px;
+}
+
+.desc-container label{
+    font-size:17px;
+    /* font-weight: bold; */
+    margin-left: 40px;
+}
+
+.task-desc{
+    height: 1rem;
+    outline: none;
+    font-size: 15px;
+    border: 0;
+    padding: 10px 0;
+    margin-left: 40px;
+    width: 40rem;
+}
+
+/* Task Category-Date container styles */
+.container-flex{
+    display: flex;
+    flex-direction: column;
+}
+
+#cat-date-container{
+    display: flex;
+    width: 100%;
+    padding: 20px 0px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.795);
+    justify-content: space-around;
+    align-items: center;
+}
+
+#cat-date-container label{
+    font-size: 17px;
+    /* font-weight: bold; */
+    margin-bottom: 5px;
+}
+
+
+/* task category input styles */
+.cat-date-input{
+    width: 16rem;
+    font-size: 15px;
+    padding: 0px 5px;
+    height: 2rem;
+}
+
+#taskCategory{
+    margin-right: 2rem;
+}
+
+/* Delete-Add buttons styles */
+.btn{
+    width: 10rem;
+    height: 2.5rem;
+    margin:15px 0; 
+    font-size: 18px;
+    background: grey;
+    border: none;
+    cursor: pointer;
+    color:white;
+}
+
+.btn:hover{
+    opacity: 0.75;
+}
+
+/* font-awesome icons styles */
+.btn i{
+    margin-right: 8px;
+}
+
+.clear-btn{
+    background-color: red;
+}
+
+.clear-btn a{
+    color: wheat;
+    padding: 10px 24px;
+    text-decoration: none;
+}
+
+/* task list styles start */
+#tasksList{
+    text-align: center;
+    width: 100%;
+}
+
+table, th ,td{
+    border: 1px solid rgba(128, 128, 128, 0.37);
+    border-collapse: collapse;
+}
+
+/* fontawesome icons in table */
+td i{
+    margin-right: 8px;
+}
+
+/* delete-task button */
+.delete-task{
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+#taskDetails{
+    width: 100%;
+}
