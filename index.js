@@ -30,15 +30,10 @@ app.get('/', function (req, res) {
 //Create a new Task 
 
 app.post('/create-task', function (req, res) {
-    
-    // get date object to format
-    // const date = require('date-and-time');
-    // const newDate = req.body.date;
-    // const dateVal = date.format(newDate,'MM/DD/YYYY');
-    
+
     Todo.create({
         desc: req.body.desc,
-        date: dateVal,
+        date: req.body.date,
         category: req.body.category
     }, function (err, newTask) {
         if (err) {
