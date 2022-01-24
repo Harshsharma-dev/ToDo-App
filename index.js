@@ -73,6 +73,10 @@ app.get('/delete-task/', function(req,res){
 app.get('/clear-list/', function(req,res){
     // let taskIds = req.query.taskIds;
     console.log(req.body);
-    Todo.deleteMany({});
+    Todo.deleteMany({}).then(function(){
+        console.log("Data deleted");
+    }).catch(function(error){
+        console.log(error);
+    });
     return res.redirect('back')
 });
